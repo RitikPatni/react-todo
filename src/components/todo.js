@@ -9,7 +9,11 @@ const Todo = ({ onClick, removeTodo, completed, text, dueDate }) => (
     className="flex items-center"
   >
     {text} to be completed on or before {dueDate}
-    <button onClick={onClick} className="ml-6">
+    <button
+      onClick={onClick}
+      className="ml-6"
+      aria-label={completed ? 'Mark Incomplete' : 'Mark Incomplete'}
+    >
       {completed ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +45,7 @@ const Todo = ({ onClick, removeTodo, completed, text, dueDate }) => (
         </svg>
       )}
     </button>
-    <button className="ml-3" onClick={removeTodo}>
+    <button className="ml-3" onClick={removeTodo} aria-label="Remove Task">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"

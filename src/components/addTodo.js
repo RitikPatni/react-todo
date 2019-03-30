@@ -36,7 +36,7 @@ const AddTodo = ({ dispatch }) => {
           required
         />
         <span class="validity" />
-        <button type="submit" className="py-2 px-6">
+        <button type="submit" className="py-2 px-6" aria-label="Add Task">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="25"
