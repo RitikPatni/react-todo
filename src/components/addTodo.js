@@ -25,12 +25,17 @@ const AddTodo = ({ dispatch }) => {
           className="py-2 border-b focus:border-gray-600 border-gray-400 w-2/3 bg-grey-100"
           required
         />
+
         <input
-          ref={node => (dateInput = node)}
           className="py-2 bg-grey-100"
+          ref={node => (dateInput = node)}
           type="date"
+          id="todo"
+          name="todo"
+          min="2019-03-30"
           required
         />
+        <span class="validity" />
         <button
           type="submit"
           className="py-2 px-6 border border-blue-500 border-2 text-blue-500 font-bold ml-4 rounded shadow"

@@ -21,7 +21,7 @@ const TodoList = ({ todos, toggleTodo, removeTodo }) => (
         <p>No Due Tasks</p>
       )}
     </ul>
-    <h1 className="text-xl font-semibold">Completed Tasks</h1>
+    <h1 className="text-xl font-semibold mt-6">Completed Tasks</h1>
     <ul>
       {todos.map(
         todo =>
