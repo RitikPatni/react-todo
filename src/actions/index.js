@@ -9,3 +9,6 @@ export const toggleTodo = id => ({
   type: 'TOGGLE_TODO',
   id,
 });
+export const ListAllTodos = {
+  SHOW_ALL: 'SHOW_ALL',
+};

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Todo from './Todo';
+import Todo from './todo';
 
 const TodoList = ({ todos, toggleTodo }) => (
   <ul>
@@ -18,7 +18,7 @@ TodoList.propTypes = {
       text: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
-  toggleTodo: PropTypes.func.isRequired,
+  // toggleTodo: PropTypes.func.isRequired,
 };
 
 export default TodoList;
