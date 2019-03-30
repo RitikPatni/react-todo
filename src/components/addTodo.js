@@ -7,7 +7,6 @@ const AddTodo = ({ dispatch }) => {
   let dateInput;
   return (
     <div>
-      <h1 className="text-2xl text-center">Make your Todo</h1>
       <form
         onSubmit={e => {
           e.preventDefault();
@@ -18,16 +17,17 @@ const AddTodo = ({ dispatch }) => {
           input.value = '';
           dateInput.value = '';
         }}
-        className="mt-16"
+        className="mt-16 flex"
       >
         <input
           ref={node => (input = node)}
-          className="py-2 border-b focus:border-gray-600 border-gray-400 w-2/3 bg-grey-100"
+          className="py-2 border-b focus:border-gray-600 border-gray-400 bg-grey-100 w-64 "
           required
+          placeholder="Ex. Write a new blog post"
         />
 
         <input
-          className="py-2 bg-grey-100"
+          className="py-2 bg-grey-100 ml-4 border-none"
           ref={node => (dateInput = node)}
           type="date"
           id="todo"
@@ -36,11 +36,21 @@ const AddTodo = ({ dispatch }) => {
           required
         />
         <span class="validity" />
-        <button
-          type="submit"
-          className="py-2 px-6 border border-blue-500 border-2 text-blue-500 font-bold ml-4 rounded shadow"
-        >
-          Add Todo
+        <button type="submit" className="py-2 px-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+            strokeLinecap="butt"
+            strokeLinejoin="arcs"
+          >
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
         </button>
       </form>
     </div>
