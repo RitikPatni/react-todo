@@ -3,16 +3,42 @@ import PropTypes from 'prop-types';
 import Todo from './todo';
 
 const TodoList = ({ todos, toggleTodo, removeTodo }) => (
-  <ul className="mt-4">
-    {todos.map(todo => (
-      <Todo
-        key={todo.id}
-        {...todo}
-        onClick={() => toggleTodo(todo.id)}
-        removeTodo={() => removeTodo(todo.id)}
-      />
-    ))}
-  </ul>
+  <React.Fragment>
+    <h1 className="text-xl font-semibold mt-8">Due Tasks</h1>
+    <ul>
+      {todos.map(
+        todo =>
+          !todo.completed && (
+            <Todo
+              key={todo.id}
+              {...todo}
+              onClick={() => toggleTodo(todo.id)}
+              removeTodo={() => removeTodo(todo.id)}
+            />
+          )
+      )}
+      {todos.filter(todo => todo.completed === false).length === 0 && (
+        <p>No Due Tasks</p>
+      )}
+    </ul>
+    <h1 className="text-xl font-semibold">Completed Tasks</h1>
+    <ul>
+      {todos.map(
+        todo =>
+          todo.completed && (
+            <Todo
+              key={todo.id}
+              {...todo}
+              onClick={() => toggleTodo(todo.id)}
+              removeTodo={() => removeTodo(todo.id)}
+            />
+          )
+      )}
+      {todos.filter(todo => !todo.completed === false).length === 0 && (
+        <p>No Completed Tasks</p>
+      )}
+    </ul>
+  </React.Fragment>
 );
 
 TodoList.propTypes = {

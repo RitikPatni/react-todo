@@ -22,7 +22,7 @@ const AddTodo = ({ dispatch }) => {
       >
         <input
           ref={node => (input = node)}
-          className="py-2 border-b focus:border-gray-600 border-gray-400 w-64 bg-grey-100"
+          className="py-2 border-b focus:border-gray-600 border-gray-400 w-2/3 bg-grey-100"
           required
         />
         <input
