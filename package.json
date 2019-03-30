@@ -10,10 +10,14 @@
     "redux": "^4.0.1"
   },
   "scripts": {
+    "analyze": "source-map-explorer \"build/static/js/*.js\"",
+    "build:css": "postcss src/styles/index.css -o src/index.css",
+    "watch:css": "postcss src/styles/index.css -o src/index.css -w",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "npm run build:css && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "dev": "concurrently --kill-others \"npm run watch:css\" \"npm start\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -23,5 +27,11 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "autoprefixer": "^9.5.0",
+    "concurrently": "^4.1.0",
+    "postcss-cli": "^6.1.2",
+    "tailwindcss": "^1.0.0-beta.4"
+  }
 }
